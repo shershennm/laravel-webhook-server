@@ -93,7 +93,7 @@ Copy the config file:
     mkdir -p config
     cp vendor/spatie/laravel-webhook-server/config/webhook-server.php config/
 
-In `bookstrap/app.php` register the service provider:
+In `bootstrap/app.php` register the service provider:
 
     $app->register(Spatie\WebhookServer\WebhookServerServiceProvider::class);
 
