@@ -13,6 +13,8 @@ If you need to receive and process webhooks take a look at our [laravel-webhook-
 
 ## Installation
 
+### Laravel
+
 You can install the package via composer:
 
 ```bash
@@ -81,6 +83,23 @@ return [
 ```
 
 By default, the package uses queues to retry failed webhook requests. Be sure to set up a real queue other than `sync` in non-local environments.
+
+### Lumen
+
+Some manual steps are needed to set this up in Lumen.
+
+Copy the config file:
+
+    mkdir -p config
+    cp vendor/spatie/laravel-webhook-server/config/webhook-server.php config/
+
+In `bookstrap/app.php` register the service provider:
+
+    $app->register(Spatie\WebhookServer\WebhookServerServiceProvider::class);
+
+Make sure eloquent is enabled:
+
+    $app->withEloquent();
 
 ## Usage
 
