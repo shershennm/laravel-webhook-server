@@ -1,4 +1,4 @@
-# Send webhooks from Laravel apps
+# Send webhooks from Laravel/Lumen apps
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-webhook-server.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-webhook-server)
 [![Build Status](https://img.shields.io/travis/spatie/laravel-webhook-server/master.svg?style=flat-square)](https://travis-ci.org/spatie/laravel-webhook-server)
