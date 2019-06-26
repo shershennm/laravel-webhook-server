@@ -110,6 +110,7 @@ WebhookCall::create()
    ->url('https://other-app.com/webhooks')
    ->payload(['key' => 'value'])
    ->useSecret('sign-using-this-secret')
+   ->delayInSeconds(60)
    ->dispatch();
 ```
 

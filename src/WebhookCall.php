@@ -41,9 +41,13 @@ class WebhookCall
             ->verifySsl($config['verify_ssl']);
     }
 
-    public function __construct()
+    public function __construct(CallWebhookJob $callWebhookJob = null)
     {
-        $this->callWebhookJob = app(CallWebhookJob::class);
+        if ($callWebhookJob === null) {
+            $callWebhookJob = app(CallWebhookJob::class);
+        }
+
+        $this->callWebhookJob = $callWebhookJob;
     }
 
     public function url(string $url)
@@ -104,6 +108,13 @@ class WebhookCall
     public function timeoutInSeconds(int $timeoutInSeconds)
     {
         $this->callWebhookJob->requestTimeout = $timeoutInSeconds;
+
+        return $this;
+    }
+
+    public function delayInSeconds(int $delaySeconds)
+    {
+        $this->callWebhookJob->delay($delaySeconds);
 
         return $this;
     }

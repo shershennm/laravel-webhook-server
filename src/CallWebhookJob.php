@@ -112,4 +112,3 @@ class CallWebhookJob implements ShouldQueue
         return $this->tags;
     }
 }
-
