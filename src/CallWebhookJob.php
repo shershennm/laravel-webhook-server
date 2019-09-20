@@ -103,7 +103,7 @@ class CallWebhookJob implements ShouldQueue
             $this->meta,
             $this->tags,
             $this->attempts(),
-            $this->response,
+            $this->response
         ));
     }
 
